@@ -67,6 +67,7 @@
   <body>
 	 <h1><%= @restaurant.name %> </h1><BR>
 
+    <p>See more: <a href="/all">95 Sandwiches Ranked</a>, <a href="/Cosi">Cosi</a>, <a href="/Lenwich">Lenwich</a>, <a href="/Panera">Panera</a>, <a href="/Potbelly">Potbelly</a>, <a href="/Pret_a_Manger">Pret a Manger</a><BR>
 
     <% if @name == "Cosi" %>
       <% cosi_food = @sort %>
@@ -140,19 +141,6 @@
     <% else %>
       <h3><%= "Oops. Please click a valid restaurant option." %>
     <% end %>
-
-
-
-    <BR><bR>
-        <p>See more:</p>
-        <ul>
-             <li><p><a href="/all">95 Sandwiches Ranked</a></p></li>
-             <li><p><a href="/Cosi">Cosi</a></p></li>
-             <li><p><a href="/Lenwich">Lenwich</a></p></li>
-             <li><p><a href="/Panera">Panera</a></p></li>
-             <li><p><a href="/Potbelly">Potbelly</a></p></li>
-             <li><p><a href="/Pret_a_Manger">Pret a Manger</a></p></li>
-        </ul><BR>
 
   </body>
 </html>
