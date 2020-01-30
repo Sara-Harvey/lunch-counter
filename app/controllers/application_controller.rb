@@ -11,4 +11,21 @@ class ApplicationController < Sinatra::Base
     erb :welcome
   end
 
+  get "/start" do
+    Scraper.scrape
+    erb :start
+  end
+
+  get "/all" do
+    @full_list = Sandwich.all
+    erb :index
+  end
+
+  get "/:name" do
+    @name = params[:name]
+    @restaurant = Restaurant.find_by(name: params[:name].to_s.gsub( /_/ , ' '))
+    @sort = @restaurant.sandwiches.sort_by {|item| item.calories}
+    erb :sandwiches
+  end
+
 end

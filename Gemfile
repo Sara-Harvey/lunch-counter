@@ -11,6 +11,7 @@ gem 'shotgun'
 gem 'pry'
 gem 'bcrypt'
 gem 'tux'
+gem 'ruby-curl', '~> 1.0', '>= 1.0.2'
 
 group :test do
   gem 'rspec'

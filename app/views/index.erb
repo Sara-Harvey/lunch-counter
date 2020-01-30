@@ -65,16 +65,34 @@
 
     <div class="col-md-8 col-md-offset-2">
 
-    <div class="page-info">
-      <h1>Welcome</h1><BR>
-    </div>
+      <div class="page-info">
+        <h1>95 Sandwiches Ranked</h1><BR>
+      </div>
+        
+        <div class="content">
 
-      <div class="content">
+      <% ranked_food = @full_list.sort_by {|item| item.calories} %>
 
-        <li><h2><a href="/start">Get the Sandwich Facts</a></h2></li>
 
-    </div>
+        <ul>
+          <% ranked_food.each do |item| %>
+            <li><%= item.calories %>, <%= item.title %>, <%= item.restaurant.name %></li>
+
+          <% end %>
+        </ul><BR>
+
+        <p>See more:</p>
+        <ul>
+             <li><p><a href="/all">95 Sandwiches Ranked</a></p></li>
+             <li><p><a href="/Cosi">Cosi</a></p></li>
+             <li><p><a href="/Lenwich">Lenwich</a></p></li>
+             <li><p><a href="/Panera">Panera</a></p></li>
+             <li><p><a href="/Potbelly">Potbelly</a></p></li>
+             <li><p><a href="/Pret_a_Manger">Pret a Manger</a></p></li>
+        </ul><BR>
+
+      </div>
 
   </div>
-</div>
 
+</div>

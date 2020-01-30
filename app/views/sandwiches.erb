@@ -1,0 +1,158 @@
+<div class="container">
+
+  <header>
+    <style>
+    @import url('https://fonts.googleapis.com/css?family=Playfair+Display&display=swap');
+
+        body {
+          background-color: white;
+        }
+
+        .page-info {
+          text-align: center;
+        }
+
+         .wrapper {
+        -moz-box-shadow: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        }
+
+        .content {
+          width: 100%;
+        }
+
+        h1 {
+          font-family: "Playfair Display", sans-serif;
+        }
+
+        h2 {
+          font-family: "Playfair Display", sans-serif;
+          border-bottom: none;
+          line-height: 12px;
+        }
+
+        /* unvisited link */
+        a:link {
+          color: black;
+          font-weight: bold;
+          text-decoration: none;
+        }
+
+        /* visited link */
+        a:visited {
+          color: black;
+          font-weight: bold;
+          text-decoration: none;
+        }
+
+        /* mouse over link */
+        a:hover {
+          color: red;
+          font-weight: bold;
+          text-decoration: none;
+        }
+
+        /* selected link */
+        a:active {
+          color: black;
+          font-weight: bold;
+          text-decoration: none;
+        }
+
+    </style>
+  </header>
+
+
+  <body>
+	 <h1><%= @restaurant.name %> </h1><BR>
+
+
+    <% if @name == "Cosi" %>
+      <% cosi_food = @sort %>
+
+    <ul>
+      <% cosi_food.each do |item| %>
+        <li><%= item.title %>, <%= item.calories %><BR> <%= item.description.capitalize %><BR><BR></li>
+      <% end %>
+    </ul><BR>
+
+    <p> Visit the <%= @restaurant.name %> <a href="https://pickup.getcosi.com/index.cfm?fuseaction=order&action=menu-category&category-id=10" target="_blank"> sandwich page </a>for full information.</p>
+    <bR>
+
+
+    <% elsif @name == "Lenwich" %>
+      <% lenwich_food = @sort %>
+
+      <ul>
+      <% lenwich_food.each do |item| %>
+          <li><%= item.title %>, <%= item.calories %> <BR> <%= item.description %></li><BR>
+      <% end %>
+      </ul><BR>
+
+      <p> Visit the <%= @restaurant.name %> <a href="https://lenwich.com/menu/" target="_blank"> sandwich page </a>for full information.</p>
+      <bR>
+
+
+
+    <% elsif @name == "Panera" %>
+      
+      <% panera_food = @restaurant.sandwiches.sort_by {|item| item.calories} %>
+
+      <ul>
+      <% panera_food.each do |item| %>
+        <% new_description = item.description.split(".") %>
+        <li><%= item.title %>, <%= item.calories %><BR> <%= new_description[0] %><%= "." %></li><BR>
+       <% end %>
+      </ul><BR>
+
+      <p> Visit the <%= @restaurant.name %> <a href="https://www.panerabread.com/en-us/menu-categories/sandwiches-panini.html" target="_blank"> sandwich page </a>for full information.</p>
+      <bR>
+
+
+
+   <% elsif @name == "Potbelly" %>
+      <% potbelly_food = @restaurant.sandwiches.sort_by {|item| item.calories} %>
+
+      <ul>
+      <% potbelly_food.each do |item| %>
+          <li><%= item.title %>, <%= item.calories %> <BR> <%= item.description %></li><BR>
+      <% end %>
+      </ul><BR>
+
+      <p> Visit the <%= @restaurant.name %> <a href="https://www.potbelly.com/menu" target="_blank"> sandwich page </a>for full information.</p>
+      <bR>
+
+
+
+    <% elsif @name == "Pret_a_Manger" %>
+      <% pret_food = @restaurant.sandwiches.sort_by {|item| item.calories} %>
+
+      <ul>
+      <% pret_food.each do |item| %>
+          <li><%= item.title %>, <%= item.calories %> <BR> <%= item.description %></li><BR>
+      <% end %>
+      </ul><BR>
+
+      <p> Visit the <%= @restaurant.name %> <a href="https://www.pret.com/en-us/our-menu/83-sandwiches.aspx" target="_blank"> sandwich page </a>for full information.</p>
+
+
+    <% else %>
+      <h3><%= "Oops. Please click a valid restaurant option." %>
+    <% end %>
+
+
+
+    <BR><bR>
+        <p>See more:</p>
+        <ul>
+             <li><p><a href="/all">95 Sandwiches Ranked</a></p></li>
+             <li><p><a href="/Cosi">Cosi</a></p></li>
+             <li><p><a href="/Lenwich">Lenwich</a></p></li>
+             <li><p><a href="/Panera">Panera</a></p></li>
+             <li><p><a href="/Potbelly">Potbelly</a></p></li>
+             <li><p><a href="/Pret_a_Manger">Pret a Manger</a></p></li>
+        </ul><BR>
+
+  </body>
+</html>
