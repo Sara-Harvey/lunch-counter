@@ -119,6 +119,7 @@ DEPENDENCIES
   bcrypt
   capybara
   database_cleaner!
+  nokogiri (~> 1.6, >= 1.6.8)
   pg (~> 0.18.4)
   pry
   rack-test
