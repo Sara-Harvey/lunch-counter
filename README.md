@@ -1,7 +1,6 @@
 <h1>Lunch Counter</h1> <br>
 
-A Ruby-Nokogiri scrape of five New York City lunch restaurant menus. The scrape captures the information each restaurant has in common — the calories and descriptions of sandwiches. Still in development. <br>
-
+A Ruby-Nokogiri scrape of five New York City lunch restaurant menus displays full lists of items, ingredients and calories. Still in development. <br>
 
 <b>Installation</b><br>
 Clone this repository <br>
