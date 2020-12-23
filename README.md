@@ -10,3 +10,5 @@ Then `shotgun` <br>
 
 View [Lunch Counter on Heroku, here.](https://hidden-oasis-09955.herokuapp.com/)<br>
 
+![](lunch-counter.gif)
+
