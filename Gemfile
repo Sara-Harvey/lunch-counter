@@ -14,7 +14,7 @@ gem 'bcrypt'
 gem 'tux'
 gem 'ruby-curl', '~> 1.0', '>= 1.0.2'
 gem 'pg', '~> 0.18.4', :group => :production
-gem 'nokogiri', '~> 1.6', '>= 1.6.8'
+gem 'nokogiri', '~> 1.13'
 
 group :test do
   gem 'rspec'
